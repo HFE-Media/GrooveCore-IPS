@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #07090d;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+::selection {
+  background: rgba(22, 135, 255, 0.38);
+  color: #ffffff;
+}
+
+.section-shell {
+  position: relative;
+  padding: 112px 0;
+}
+
+.section-title {
+  font-family:
+    "Arial Narrow", "Roboto Condensed", Impact, ui-sans-serif, system-ui,
+    sans-serif;
+  font-size: clamp(2.35rem, 5vw, 4.75rem);
+  line-height: 0.98;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.section-copy {
+  margin-top: 1.5rem;
+  max-width: 48rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.premium-card,
+.premium-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.02)),
+    radial-gradient(circle at 10% 0%, rgba(22, 135, 255, 0.16), transparent 34%),
+    #111821;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.premium-card {
+  padding: 2rem;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(22, 135, 255, 0.48);
+}
+
+.premium-card::before,
+.premium-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.055), transparent),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 0,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+  opacity: 0.65;
+}
+
+.premium-card > *,
+.premium-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.visual-tile {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  background:
+    linear-gradient(180deg, rgba(7, 9, 13, 0.1), rgba(7, 9, 13, 0.92)),
+    radial-gradient(circle at 70% 20%, rgba(22, 135, 255, 0.32), transparent 34%),
+    linear-gradient(135deg, #171d25, #080a0f);
+}
+
+.visual-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(32deg, transparent 18%, rgba(215, 168, 77, 0.18) 19%, transparent 21%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.05) 0,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 18px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 18px,
+      rgba(22, 135, 255, 0.1) 19px,
+      transparent 21px
+    );
+  opacity: 0.8;
+}
+
+.visual-tile::after {
+  content: "";
+  position: absolute;
+  right: -18%;
+  top: 18%;
+  width: 75%;
+  height: 38%;
+  border: 18px solid rgba(255, 255, 255, 0.12);
+  border-left-color: rgba(22, 135, 255, 0.42);
+  border-radius: 999px;
+  transform: rotate(-14deg);
+}
+
+.animate-rise {
+  animation: rise 680ms ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .section-shell {
+    padding: 80px 0;
+  }
+}
